@@ -1,0 +1,31 @@
+version: 2
+registries:
+  nuget-feed-www-powershellgallery-com-api-v2:
+    type: nuget-feed
+    url: https://www.powershellgallery.com/api/v2/
+  nuget-feed-api-nuget-org-v3-index-json:
+    type: nuget-feed
+    url: https://api.nuget.org/v3/index.json
+  nuget-feed-dotnet-myget-org-f-dotnet-core-api-v3-index-json:
+    type: nuget-feed
+    url: https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
+  nuget-feed-powershell-myget-org-f-powershell-core-api-v3-index-j:
+    type: nuget-feed
+    url: https://powershell.myget.org/F/powershell-core/api/v3/index.json
+  nuget-feed-powershell-pkgs-visualstudio-com-powershell-packaging:
+    type: nuget-feed
+    url: https://powershell.pkgs.visualstudio.com/PowerShell/_packaging/powershell/nuget/v3/index.json
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+    timezone: America/Anchorage
+  open-pull-requests-limit: 10
+  registries:
+  - nuget-feed-www-powershellgallery-com-api-v2
+  - nuget-feed-api-nuget-org-v3-index-json
+  - nuget-feed-dotnet-myget-org-f-dotnet-core-api-v3-index-json
+  - nuget-feed-powershell-myget-org-f-powershell-core-api-v3-index-j
+  - nuget-feed-powershell-pkgs-visualstudio-com-powershell-packaging
